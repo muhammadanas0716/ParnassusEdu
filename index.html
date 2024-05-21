@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Parnassus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark only">
+  <meta name="description" content="Parnassus">
+  <meta property="og:site_name" content="Parnassus">
+  <meta property="og:title" content="Parnassus">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Parnassus">
+  <link
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Sora:ital,wght@0,400;1,400&amp;family=Inter:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700"
+    rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
+        <div id="container02" class="container columns"></div>
+        <p id="text02">Coming Soon</p>
+        <h1 id="text04">Parnassus</h1>
+        <p id="text07">Supercharge your learning with a personalised experience tailored to you.</p>
+        <hr>
+        <hr>
+        <ul id="buttons01" class="buttons">
+          <li><a class="button n01" href="#modal1"><span class="label">What is Parnassus?</span></a></li>
+          <li><a class="button n02" href="#modal2"><span class="label">Where are we now?</span></a></li>
+          <li><a class="button n03" href="#modal3"><span class="label">Sign up for Updates?</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>What is Parnassus?</h2>
+      <p>Omphalos, our very own machine learning (ML) model is built to work with every student individually, your
+        subjects, your questions, your very own tutor, and one that works for everything you do.</p>
+      <p>From discussing your Past Paper questions to creating quizzes for you to take on a good grasp of the underlying
+        concepts and also help you revise.</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Where are we now?</h2>
+      <p>As we speak, we are on our way to soon get this into the beta testing phase. We are at the moment building the
+        ML model <strong>Omphalos</strong>.</p>
+      <p>We are also building the other features of the website like the community forum platform so you folks can
+        create student groups and discuss with your friends and classmates.</p>
+    </div>
+  </div>
+
+  <!-- EMAIL FORM, BUTTON, MODAL -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Sign up for Updates</h2>
+      <p>If you're interested in getting early access (SOON), be sure to signup!</p>
+      <form id="emailForm">
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+
+      fetch('http://localhost:3000/submit-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          email: email,
+        })
+      })
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+  <script src="JS/index.js"></script>
+  <script src="JS/emailFunctionality.js"></script>
+</body>
+
+</html>
