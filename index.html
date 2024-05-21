@@ -14,8 +14,11 @@
   <link
     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Sora:ital,wght@0,400;1,400&amp;family=Inter:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700"
     rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha384-6McM0orLcD+27tZqPvh5FSzz5MSvWNgM8E+IG5S2wYt1IH7Z/6G/+Mtt4ptjOkgr" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 
 <body>
   <div id="wrapper">
@@ -31,6 +34,7 @@
           <li><a class="button n01" href="#modal1"><span class="label">What is AstranAI?</span></a></li>
           <li><a class="button n02" href="#modal2"><span class="label">Where are we now?</span></a></li>
           <li><a class="button n03" href="#modal3"><span class="label">Sign up for Updates?</span></a></li>
+          <li><a class="button n04" href="#modal4"><span class="label">About Us</span></a></li>
         </ul>
       </div>
     </div>
@@ -64,14 +68,33 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Sign up for Updates</h2>
-      <p>If you're interested in getting early access (SOON), be sure to signup!</p>
+      <p>If you're interested in getting early access, be sure to signup!</p>
       <form id="emailForm">
         <input type="email" id="email" name="email" placeholder="Email" required>
         <button type="submit">Sign Up</button>
       </form>
+      <!-- <div class="social-buttons">
+        <a href="https://twitter.com" target="_blank" class="social-button twitter"><i class="fab fa-twitter"></i>
+          Twitter</a>
+        <a href="https://instagram.com" target="_blank" class="social-button instagram"><i class="fab fa-instagram"></i>
+          Instagram</a>
+      </div> -->
     </div>
   </div>
 
+
+  <!-- About Us Modal -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>About Us</h2>
+      <p>Anas and Shahmeer here, we are 2 high schoolers trying to build something cool for the educational community.
+        Shahmeer here would be the Founder of AstranAI and I would be the Co-Founder and CEO of AstranAI.
+      <p> <a href="https://www.linkedin.com/in/muhammadanas0716/" target="_blank">Anas</a>
+        & <a href="https://www.linkedin.com/in/shahmeer-satti-396132274/" target="_blank">Shahmeer</a>.</p>
+      </p>
+    </div>
+  </div>
 
   <script>
     document.getElementById("emailForm").addEventListener("submit", function (event) {
@@ -91,6 +114,22 @@
         .then(data => alert(data))
         .catch(error => console.error('Error:', error));
     });
+
+    document.querySelectorAll('.close').forEach(button => {
+      button.onclick = function () {
+        const modal = button.closest('.modal');
+        modal.style.display = 'none';
+      };
+    });
+
+    window.onclick = function (event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    };
   </script>
   <script src="JS/index.js"></script>
   <script src="JS/emailFunctionality.js"></script>
