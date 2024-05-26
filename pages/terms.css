@@ -1,0 +1,83 @@
+body {
+  font: normal normal 400 1em "Inter", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Helvetica, Arial, sans-serif;
+  color: rgb(161, 161, 161);
+  margin: 0;
+  padding: 0;
+  --wr-max: 1140px;
+  position: relative;
+  word-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.5;
+  background: radial-gradient(circle at top, #482080, #000000 20%);
+  color: white;
+}
+
+.wr {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  position: relative;
+  max-width: var(--wr-max);
+  box-sizing: border-box;
+}
+
+a,
+.link {
+  color: var(--color-text-link);
+  font-weight: var(--fontWeight-text-medium);
+  text-decoration: none;
+}
+
+a:not(.btn):hover {
+  color: rgb(115, 38, 239);
+}
+
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+h1.privacy-title {
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+h2.privacy-subtitle {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: disc;
+  margin: 10px 0 20px 20px;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.contact-box {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-box a {
+  color: rgb(115, 38, 239);
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  color: rgb(161, 161, 161);
+}
